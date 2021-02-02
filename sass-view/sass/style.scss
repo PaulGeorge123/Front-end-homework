@@ -1,0 +1,84 @@
+$background-header: blue;
+$background-sidebar: yellow;
+$background-content: pink;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin background($background) {
+  background: $background;
+}
+
+@mixin div($height,$width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin padding($top,$right,$bottom,$left) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin margin($top,$right,$bottom,$left) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex($flex-direction,$justify-content,$align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin layout($width,$background,$height) {
+  @include background($background);
+  @include div($width: $width, $height: $height);
+}
+
+.body {
+  @include flex-row;
+}
+
+.all {
+  @include div($height: 100%, $width: 100%);
+}
+
+.header {
+  @include layout($width: auto, $background: $background-header, $height: 60px);
+  @include flex($flex-direction: row, $justify-content: space-between, $align-items: center);
+  @include padding(0, 30px, 0, 30px);
+}
+
+.sidebar {
+  @include layout($width: 15%, $background: $background-sidebar, $height: calc(100vh - 60px));
+  @include flex($flex-direction: column, $justify-content: flex-start, $align-items: center);
+
+  span {
+    @include div($width: 60%, $height: 30px);
+    @include flex($flex-direction: row, $justify-content: center, $align-items: center);
+    @include background(purple);
+    @include margin(20px, 0, 20px, 0);
+  }
+}
+
+.content {
+  @include layout($width: 85%, $background: $background-content, $height: calc(100vh - 60px));
+  @include flex($flex-direction: column, $justify-content: space-around, $align-items: center);
+}
+
+.header-mark {
+  @include flex($flex-direction: row, $justify-content: center, $align-items: center);
+  @include div($width: 90px, $height: 30px);
+  @include background(white);
+}
+
+.content-main {
+  @include div($width: 80%, $height: 40%);
+  @include background(green);
+}

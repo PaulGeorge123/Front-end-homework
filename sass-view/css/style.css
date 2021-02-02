@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.all {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  background: blue;
+  height: 60px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px 0 30px;
+}
+
+.sidebar {
+  background: yellow;
+  height: calc(100vh - 60px);
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sidebar span {
+  height: 30px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: purple;
+  margin: 20px 0 20px 0;
+}
+
+.content {
+  background: pink;
+  height: calc(100vh - 60px);
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-mark {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 90px;
+  background: white;
+}
+
+.content-main {
+  height: 40%;
+  width: 80%;
+  background: green;
+}
+
+/*# sourceMappingURL=style.css.map */
